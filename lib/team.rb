@@ -7,17 +7,14 @@ class Team
   end
   def add_by_name(name)
     raise ArgumentError unless name.is_a?(String)
-    @roster << Champion.by_name(name)
+    champ = Champion.by_name(name)
+    @roster << champ unless champ.nil?
   end
   def strengths
-    hash = {}
+    hash = Hash.new(0)
     @roster.each do |teammate|
       teammate.strengths.each do |strength|
-        if hash.key?(strength)
-          hash[strength] += 1
-        else
-          hash[strength] = 1
-        end
+        hash[strength] += 1
       end
     end
     hash

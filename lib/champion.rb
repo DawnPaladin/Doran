@@ -23,7 +23,12 @@ class Champion
   end
 
   def self.by_name(name)
-    @@CHAMPIONS.select { |champ| champ.name == name } [0]
+    champ_lookup = @@CHAMPIONS.select { |champ| champ.name == name }
+    if champ_lookup.length == 1
+      champ_lookup.first
+    else
+      nil
+    end
   end
 end
 
