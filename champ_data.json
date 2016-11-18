@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Leona",
+    "synergizes_with": ["Lucian"],
+    "roster_positions": ["support"],
+    "strengths": ["cc", "tank"],
+    "counters": ["Soraka"]
+  },{
+    "name": "Morgana",
+    "counters": ["Leona"],
+    "strengths": ["cc", "ap"]
+  },{
+    "name": "Sona",
+    "roster_positions": ["support"],
+    "strengths": ["heal", "poke", "ap"],
+    "weaknesses": ["burst"],
+    "synergizes_with": ["Caitlyn"]
+  },{
+    "name": "Kayle",
+    "roster_positions": ["top", "mid","jungle"],
+    "strengths": ["waveclear", "ap", "lategame", "utility"],
+    "counters": ["Yasuo"],
+    "weaknesses": ["mobility"]
+  },{
+    "name": "Quinn",
+    "roster_positions": ["top", "mid"],
+    "strengths": ["waveclear", "mobility", "interrupt"],
+    "counters": ["Katarina"]
+  },{
+    "name": "Ziggs",
+    "roster_positions": ["mid"],
+    "strengths": ["range", "waveclear", "ap"]
+  },{
+    "name": "Yasuo",
+    "counters": ["Ziggs","Quinn","Xerath","Sona"],
+    "strengths": ["mobility","autoattack"]
+  },{
+    "name": "Taliyah",
+    "counters": ["Yasuo"],
+    "strengths": ["anti-mobility"],
+    "roster_positions": ["mid"]
+  },{
+    "name": "Poppy",
+    "counters": ["Yasuo", "Riven", "Ekko"],
+    "strengths": ["anti-mobility", "tank", "disengage", "interrupt"],
+    "roster_positions": ["top"]
+  },{
+    "name": "Nautilus",
+    "counters": ["Yasuo"],
+    "strengths": ["knockup", "cc", "tank"],
+    "roster_positions": ["support","jungle"]
+  },{
+    "name": "Caitlyn",
+    "counters": ["Lucian"],
+    "strengths": ["range"]
+  },{
+    "name": "Ekko",
+    "strengths": ["waveclear","cc","mobility"],
+    "roster_positions": ["mid"]
+  },{
+    "name": "Thresh",
+    "strengths": ["cc", "mobility"],
+    "counters": ["Sona","Soraka"]
+  },{
+    "name": "Blitzcrank",
+    "counters": ["Sona", "Soraka"]
+  },{
+    "name": "Katarina",
+    "strengths": ["burst", "mobility"],
+    "weaknesses": ["interrupt", "cc"]
+  }
+]
