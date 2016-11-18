@@ -12,12 +12,24 @@ class Team
     champ = Champion.by_name(name)
     @roster << champ unless champ.nil?
   end
-  def strengths
+  def attribute(atts)
+    # takes a symbol like :strengths
+    # returns a hash enumerating the team's :strengths
     hash = Hash.new(0)
     @roster.each do |teammate|
-      teammate.strengths.each do |strength|
-        hash[strength] += 1
+      teammate.send(atts).each do |att|
+        hash[att] += 1
       end
+    end
+    hash
+  end
+  def balance
+    strengths = attribute(:strengths)
+    weaknesses = attribute(:weaknesses)
+    keys = strengths.keys + weaknesses.keys
+    hash = Hash.new(0)
+    keys.each do |key|
+      hash[key] = strengths[key] - weaknesses[key]
     end
     hash
   end

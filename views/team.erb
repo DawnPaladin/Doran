@@ -6,9 +6,36 @@
     <% end %>
   </ul>
 <% end %>
+
 <form action="/add-champ" method="post">
   <input type="text" name="champ-name" placeholder="Enter a champion name" autofocus class="awesomplete" list="champNames" data-autofirst="true">
   <input type="hidden" name="team-name" value="<%= team.name %>">
   <input type="submit">
 </form>
-Team strengths: <%= team.strengths %>
+
+<div class="panel panel-default" style="margin-top: 1em">
+  <div class="panel-heading">
+    <h4>Counters</h4>
+  </div>
+  <div class="panel-body">
+    <% team.attribute(:counters).each do |champion, value| %>
+      <span style="font-size: <%= 0.5 + 0.5 * value %>em"><%= champion %></span>
+    <% end %>
+  </div>
+</div>
+
+<div class="panel panel-default" style="margin-top: 1em">
+  <div class="panel-heading">
+    <h4>Team attributes</h4>
+  </div>
+  <div class="panel-body">
+    <% team.balance.each do |attribute, value| %>
+      <span style="<%= 'color: red;' if value < 0 %>
+        font-size: <%= 0.5 + 0.5 * value.abs %>em
+        <%= 'display: none' if value.zero? %>
+      " >
+      <%= '-' if value < 0 %><%= attribute %>
+    </span>
+    <% end %>
+  </div>
+</div>
