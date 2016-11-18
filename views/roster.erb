@@ -3,10 +3,10 @@
 <div class="row">
   <div class="col-sm-6">
     <h3>Your Team</h3>
-    <% if friendly_champs.length > 0 %>
+    <% if friendly_champs.roster.length > 0 %>
       <ul>
-        <% friendly_champs.each do |champ| %>
-          <li><%= champ %></li>
+        <% friendly_champs.roster.each do |champ| %>
+          <li><%= champ.name %></li>
         <% end %>
       </ul>
     <% end %>

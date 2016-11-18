@@ -1,13 +1,15 @@
 #!/usr/bin/env ruby
 require 'sinatra'
 require 'rerun'
+require_relative 'lib/champion'
+require_relative 'lib/team'
 
 enable :sessions
 
-
 helpers do
   def init
-    session['friendly_champs'] ||= []
+    session['friendly_champs'] ||= Team.new
+    # session['friendly_champs'] = Team.new
   end
 end
 
@@ -22,8 +24,11 @@ end
 post '/add-friendly-champ' do
   friendly_champs = session['friendly_champs']
   champ = params['friendly-champ-1']
-  friendly_champs << champ
+
+  friendly_champs.add_by_name(champ)
+
   session['friendly_champs'] = friendly_champs
+
   redirect to('/')
 end
 

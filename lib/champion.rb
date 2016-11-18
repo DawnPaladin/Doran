@@ -21,6 +21,10 @@ class Champion
     array = JSON.parse(file)
     @@CHAMPIONS = array.map { |champ_obj| Champion.new(champ_obj) }
   end
+
+  def self.by_name(name)
+    @@CHAMPIONS.select { |champ| champ.name == name } [0]
+  end
 end
 
 Champion.create_from_file('champ_data.json')
