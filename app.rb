@@ -8,8 +8,8 @@ enable :sessions
 
 helpers do
   def init
-    session['friendly_team'] ||= Team.new("Your Team")
-    session['enemy_team'] ||= Team.new("Enemy Team")
+    session['friendly_team'] ||= Team.new("Your Team", "friendly_team")
+    session['enemy_team'] ||= Team.new("Enemy Team", "enemy_team")
     # session['friendly_team'] = Team.new
   end
 end

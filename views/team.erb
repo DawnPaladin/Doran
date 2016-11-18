@@ -7,7 +7,7 @@
   </ul>
 <% end %>
 <form action="/add-champ" method="post">
-  <input type="text" name="champ-name" autofocus class="awesomplete" list="champNames" data-autofirst="true">
+  <input type="text" name="champ-name" placeholder="Enter a champion name" autofocus class="awesomplete" list="champNames" data-autofirst="true">
   <input type="hidden" name="team-name" value="<%= team.name %>">
   <input type="submit">
 </form>
