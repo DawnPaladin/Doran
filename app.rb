@@ -22,13 +22,21 @@ get '/' do
   erb :roster, :locals => { :friendly_team => session['friendly_team'], :enemy_team => session['enemy_team'] }
 end
 
-post '/add-friendly-champ' do
-  friendly_team = session['friendly_team']
-  champ = params['friendly-champ-1']
+post '/add-champ' do
+  team_name = params['team-name']
+  if team_name == "Your Team"
+    team_descriptor = 'friendly_team'
+  elsif team_name == "Enemy Team"
+    team_descriptor = 'enemy_team'
+  else
+    raise ArgumentError "Invalid team"
+  end
+  team = session[team_descriptor]
+  champ = params['champ-name']
 
-  friendly_team.add_by_name(champ)
+  team.add_by_name(champ)
 
-  session['friendly_team'] = friendly_team
+  session[team_descriptor] = team
 
   redirect to('/')
 end

@@ -2,12 +2,12 @@ require_relative 'champion'
 
 class Team
   attr_reader :roster, :name, :id
-  @@teams = 0
+  @@count = 0
   def initialize(name)
     @roster = []
     @name = name
-    @@teams += 1
-    @id = @@teams
+    @@count += 1
+    @id = @@count
   end
   def add_by_name(name)
     raise ArgumentError unless name.is_a?(String)

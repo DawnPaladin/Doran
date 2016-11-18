@@ -6,8 +6,9 @@
     <% end %>
   </ul>
 <% end %>
-<form action="/add-friendly-champ" method="post">
-  <input type="text" name="friendly-champ-1" autofocus class="awesomplete" list="champNames" data-autofirst="true">
+<form action="/add-champ" method="post">
+  <input type="text" name="champ-name" autofocus class="awesomplete" list="champNames" data-autofirst="true">
+  <input type="hidden" name="team-name" value="<%= team.name %>">
   <input type="submit">
 </form>
 Team strengths: <%= team.strengths %>
