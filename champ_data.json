@@ -68,5 +68,9 @@
     "name": "Katarina",
     "strengths": ["burst", "mobility"],
     "weaknesses": ["interrupt", "cc"]
+  },{
+    "name": "Soraka",
+    "strengths": ["heal"],
+    "counters": ["Caitlyn", "Varus"]
   }
 ]

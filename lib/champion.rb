@@ -1,7 +1,7 @@
 require 'json'
 
 class Champion
-  attr_reader :name, :roster_positions, :strengths, :weaknesses, :synergizes_with, :counters
+  attr_reader :name, :roster_positions, :strengths, :weaknesses, :synergizes_with, :counters, :countered_by
 
   def initialize(obj)
     @name = obj['name']
@@ -10,6 +10,19 @@ class Champion
     @weaknesses = obj['weaknesses'] || []
     @synergizes_with = obj['synergizes_with'] || []
     @counters = obj['counters'] || []
+    @countered_by = []
+  end
+
+  def my_counters
+    list = []
+    @@CHAMPIONS.each do |champ|
+      list << champ.name if champ.counters.include?(@name)
+    end
+    list
+  end
+
+  def populate_countered_by
+    @countered_by = my_counters
   end
 
   def self.CHAMPIONS
@@ -20,6 +33,7 @@ class Champion
     file = File.read(path)
     array = JSON.parse(file)
     @@CHAMPIONS = array.map { |champ_obj| Champion.new(champ_obj) }
+    @@CHAMPIONS.each { |champ| champ.populate_countered_by }
   end
 
   def self.by_name(name)
