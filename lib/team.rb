@@ -9,4 +9,17 @@ class Team
     raise ArgumentError unless name.is_a?(String)
     @roster << Champion.by_name(name)
   end
+  def strengths
+    hash = {}
+    @roster.each do |teammate|
+      teammate.strengths.each do |strength|
+        if hash.key?(strength)
+          hash[strength] += 1
+        else
+          hash[strength] = 1
+        end
+      end
+    end
+    hash
+  end
 end
