@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="awesomplete.css">
+
 <div class="row">
   <div class="col-sm-6">
     <h3>Your Team</h3>
@@ -9,10 +11,17 @@
       </ul>
     <% end %>
     <form action="/add-friendly-champ" method="post">
-      <input type="text" name="friendly-champ-1"><input type="submit">
+      <input type="text" id="champ1" name="friendly-champ-1"><input type="submit">
     </form>
   </div>
   <div class="col-sm-6">
     <h3>Enemy Team</h3>
   </div>
 </div>
+
+<script src="awesomplete.js"></script>
+<script src="champ-name-list.js"></script>
+<script>
+box = document.getElementById("champ1")
+new Awesomplete(box, { list: champNames, autoFirst: true } )
+</script>
