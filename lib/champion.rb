@@ -33,4 +33,3 @@ class Champion
 end
 
 Champion.create_from_file('champ_data.json')
-p Champion.CHAMPIONS

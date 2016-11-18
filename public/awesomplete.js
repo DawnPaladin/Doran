@@ -134,6 +134,7 @@ _.prototype = {
 				this._list = items;
 			}
 		}
+    console.log(this)
 
 		if (document.activeElement === this.input) {
 			this.evaluate();

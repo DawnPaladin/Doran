@@ -1,0 +1,13 @@
+<h3><%= team.name %></h3>
+<% if team.roster.length > 0 %>
+  <ul>
+    <% team.roster.each do |champ| %>
+      <li><%= champ.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+<form action="/add-friendly-champ" method="post">
+  <input type="text" name="friendly-champ-1" autofocus class="awesomplete" list="champNames" data-autofirst="true">
+  <input type="submit">
+</form>
+Team strengths: <%= team.strengths %>

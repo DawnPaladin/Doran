@@ -2,27 +2,28 @@
 
 <div class="row">
   <div class="col-sm-6">
-    <h3>Your Team</h3>
-    <% if friendly_champs.roster.length > 0 %>
-      <ul>
-        <% friendly_champs.roster.each do |champ| %>
-          <li><%= champ.name %></li>
-        <% end %>
-      </ul>
-    <% end %>
-    <form action="/add-friendly-champ" method="post">
-      <input type="text" id="champ1" name="friendly-champ-1" autofocus><input type="submit">
-    </form>
-    Team strengths: <%= friendly_champs.strengths %>
+    <%= erb :team, :locals => { :team => friendly_team } %>
   </div>
   <div class="col-sm-6">
-    <h3>Enemy Team</h3>
+    <%= erb :team, :locals => { :team => enemy_team } %>
   </div>
 </div>
 
+<datalist id="champNames">
+  <option>Leona</option>
+  <option>Morgana</option>
+  <option>Sona</option>
+  <option>Kayle</option>
+  <option>Quinn</option>
+  <option>Ziggs</option>
+  <option>Yasuo</option>
+  <option>Taliyah</option>
+  <option>Poppy</option>
+  <option>Nautilus</option>
+  <option>Caitlyn</option>
+  <option>Ekko</option>
+  <option>Thresh</option>
+  <option>Blitzcrank</option>
+  <option>Katarina</option>
+</datalist>
 <script src="awesomplete.js"></script>
-<script src="champ-name-list.js"></script>
-<script>
-box = document.getElementById("champ1")
-new Awesomplete(box, { list: champNames, autoFirst: true } )
-</script>
