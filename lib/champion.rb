@@ -1,7 +1,8 @@
 require 'json'
+require 'pathname'
 
 class Champion
-  attr_reader :name, :roster_positions, :strengths, :weaknesses, :synergizes_with, :counters, :countered_by
+  attr_reader :name, :roster_positions, :strengths, :weaknesses, :synergizes_with, :counters, :countered_by, :icon
 
   def initialize(obj)
     @name = obj['name']
@@ -11,6 +12,7 @@ class Champion
     @synergizes_with = obj['synergizes_with'] || []
     @counters = obj['counters'] || []
     @countered_by = []
+    @icon = "champion-squares/#{@name}_Square_0.png"
   end
 
   def my_counters

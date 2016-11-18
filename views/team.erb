@@ -1,26 +1,33 @@
 <h3><%= team.name %></h3>
-<% if team.roster.length > 0 %>
-  <ul>
-    <% team.roster.each do |champ| %>
-      <li><%= champ.name %></li>
-    <% end %>
-  </ul>
-<% end %>
+<% p team.roster[0] %>
+<ul>
+  <li class="teammate">
+    <img src="<%= team.roster[0].icon unless team.roster[0].nil? %>" class="icon">
+    <%= team.roster[0].name unless team.roster[0].nil? %>
+  </li>
+  <li class="teammate">
+    <img src="<%= team.roster[1].icon unless team.roster[1].nil? %>" class="icon">
+    <%= team.roster[1].name unless team.roster[1].nil? %>
+  </li>
+  <li class="teammate">
+    <img src="<%= team.roster[2].icon unless team.roster[2].nil? %>" class="icon">
+    <%= team.roster[2].name unless team.roster[2].nil? %>
+  </li>
+  <li class="teammate">
+    <img src="<%= team.roster[3].icon unless team.roster[3].nil? %>" class="icon">
+    <%= team.roster[3].name unless team.roster[3].nil? %>
+  </li>
+  <li class="teammate">
+    <img src="<%= team.roster[4].icon unless team.roster[4].nil? %>" class="icon">
+    <%= team.roster[4].name unless team.roster[4].nil? %>
+  </li>
+</ul>
 
 <form action="/add-champ" method="post">
   <input type="text" name="champ-name" placeholder="Enter a champion name" autofocus class="awesomplete" list="champNames" data-autofirst="true">
   <input type="hidden" name="team-name" value="<%= team.name %>">
   <input type="submit" tabindex="-1">
 </form>
-
-<div class="panel panel-default" style="margin-top: 1em">
-  <div class="panel-heading"> <strong>Counters</strong> </div>
-  <div class="panel-body">
-    <% team.attribute(:countered_by).each do |champion, value| %>
-      <span style="font-size: <%= 0.5 + 0.5 * value %>em"><%= champion %></span>
-    <% end %>
-  </div>
-</div>
 
 <div class="panel panel-default" style="margin-top: 1em">
   <div class="panel-heading"> <strong>Strengths and weaknesses</strong> </div>
@@ -32,6 +39,18 @@
       " >
       <%= '-' if value < 0 %><%= attribute %>
     </span>
+    <% end %>
+  </div>
+</div>
+
+<div class="panel panel-default" style="margin-top: 1em">
+  <div class="panel-heading"> <strong>Counters</strong> </div>
+  <div class="panel-body">
+    <% team.attribute(:countered_by).each do |champion, value| %>
+      <div style="font-size: <%= 1 + 0.5 * value %>em">
+        <img class="icon" src="<%= Champion.by_name(champion).icon %>">
+        <%= champion %>
+      </div>
     <% end %>
   </div>
 </div>
