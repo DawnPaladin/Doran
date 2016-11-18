@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Your Team</h3>
+    <% if friendly_champs.length > 0 %>
+      <ul>
+        <% friendly_champs.each do |champ| %>
+          <li><%= champ %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <form action="/add-friendly-champ" method="post">
+      <input type="text" name="friendly-champ-1"><input type="submit">
+    </form>
+  </div>
+  <div class="col-sm-6">
+    <h3>Enemy Team</h3>
+  </div>
+</div>
