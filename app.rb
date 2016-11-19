@@ -12,6 +12,24 @@ helpers do
     session['enemy_team'] ||= Team.new("Enemy Team", "enemy_team")
     # session['friendly_team'] = Team.new
   end
+  def name_to_descriptor(team_name)
+    if team_name == "Your Team"
+      'friendly_team'
+    elsif team_name == "Enemy Team"
+      'enemy_team'
+    else
+      raise ArgumentError "Invalid team"
+    end
+  end
+  def other_team_descriptor(team_name)
+    if team_name == "Your Team"
+      'enemy_team'
+    elsif team_name == "Enemy Team"
+      'friendly_team'
+    else
+      raise ArgumentError "Invalid team"
+    end
+  end
 end
 
 before do
@@ -22,15 +40,22 @@ get '/' do
   erb :roster, :locals => { :friendly_team => session['friendly_team'], :enemy_team => session['enemy_team'] }
 end
 
-post '/add-champ' do
+get '/add-champ' do
   team_name = params['team-name']
-  if team_name == "Your Team"
-    team_descriptor = 'friendly_team'
-  elsif team_name == "Enemy Team"
-    team_descriptor = 'enemy_team'
-  else
-    raise ArgumentError "Invalid team"
-  end
+  team_descriptor = name_to_descriptor(team_name)
+  team = session[team_descriptor]
+  champ = params['champ-name']
+
+  team.add_by_name(champ)
+
+  session[team_descriptor] = team
+
+  redirect to('/')
+end
+
+get '/counterpick-champ' do
+  team_name = params['team-name']
+  team_descriptor = other_team_descriptor(team_name)
   team = session[team_descriptor]
   champ = params['champ-name']
 

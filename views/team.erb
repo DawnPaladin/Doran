@@ -23,7 +23,7 @@
   </li>
 </ul>
 
-<form action="/add-champ" method="post">
+<form action="/add-champ" method="get">
   <input type="text" name="champ-name" placeholder="Enter a champion name" autofocus class="awesomplete" list="champNames" data-autofirst="true">
   <input type="hidden" name="team-name" value="<%= team.name %>">
   <input type="submit" tabindex="-1">
@@ -48,8 +48,10 @@
   <div class="panel-body">
     <% team.attribute(:countered_by).each do |champion, value| %>
       <div style="font-size: <%= 1 + 0.5 * value %>em">
-        <img class="icon" src="<%= Champion.by_name(champion).icon %>">
-        <%= champion %>
+        <a href="/counterpick-champ?champ-name=<%= champion %>&amp;team-name=<%= team.name %>">
+          <img class="icon" src="<%= Champion.by_name(champion).icon %>">
+          <%= champion %>
+        </a>
       </div>
     <% end %>
   </div>
