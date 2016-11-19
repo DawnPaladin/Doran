@@ -12,6 +12,16 @@ class Team
     champ = Champion.by_name(name)
     @roster << champ unless champ.nil?
   end
+  def remove_by_name(name)
+    raise ArgumentError unless name.is_a?(String)
+    champ = Champion.by_name(name)
+    p @roster
+    @roster = @roster - champ
+    p @roster
+  end
+  def remove_by_index(index)
+    @roster.delete_at(index.to_i)
+  end
   def attribute(atts)
     # takes a symbol like :strengths
     # returns a hash enumerating the team's :strengths

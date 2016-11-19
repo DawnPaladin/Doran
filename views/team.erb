@@ -4,22 +4,27 @@
   <li class="teammate">
     <img src="<%= team.roster[0].icon unless team.roster[0].nil? %>" class="icon">
     <%= team.roster[0].name unless team.roster[0].nil? %>
+    <a href="/remove?index=0&amp;team-name=<%= team.name %>" class="remove" style="<%= 'display: none' if team.roster[0].nil? %>">[remove]</a>
   </li>
   <li class="teammate">
     <img src="<%= team.roster[1].icon unless team.roster[1].nil? %>" class="icon">
     <%= team.roster[1].name unless team.roster[1].nil? %>
+    <a href="/remove?index=1&amp;team-name=<%= team.name %>" class="remove" style="<%= 'display: none' if team.roster[1].nil? %>">[remove]</a>
   </li>
   <li class="teammate">
     <img src="<%= team.roster[2].icon unless team.roster[2].nil? %>" class="icon">
     <%= team.roster[2].name unless team.roster[2].nil? %>
+    <a href="/remove?index=2&amp;team-name=<%= team.name %>" class="remove" style="<%= 'display: none' if team.roster[2].nil? %>">[remove]</a>
   </li>
   <li class="teammate">
     <img src="<%= team.roster[3].icon unless team.roster[3].nil? %>" class="icon">
     <%= team.roster[3].name unless team.roster[3].nil? %>
+    <a href="/remove?index=3&amp;team-name=<%= team.name %>" class="remove" style="<%= 'display: none' if team.roster[3].nil? %>">[remove]</a>
   </li>
   <li class="teammate">
     <img src="<%= team.roster[4].icon unless team.roster[4].nil? %>" class="icon">
     <%= team.roster[4].name unless team.roster[4].nil? %>
+    <a href="/remove?index=4&amp;team-name=<%= team.name %>" class="remove" style="<%= 'display: none' if team.roster[4].nil? %>">[remove]</a>
   </li>
 </ul>
 

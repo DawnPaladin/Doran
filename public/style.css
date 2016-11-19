@@ -6,3 +6,8 @@
   width: 1em;
   height: 1em;
 }
+a.remove {
+  color: silver;
+  font-style: italic;
+  font-size: .8em;
+}

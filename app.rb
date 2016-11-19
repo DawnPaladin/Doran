@@ -66,6 +66,19 @@ get '/counterpick-champ' do
   redirect to('/')
 end
 
+get '/remove' do
+  team_name = params['team-name']
+  team_descriptor = name_to_descriptor(team_name)
+  team = session[team_descriptor]
+  index = params['index']
+
+  team.remove_by_index(index)
+
+  session[team_descriptor] = team
+
+  redirect to('/')
+end
+
 get '/reset' do
   session.clear
   redirect to('/')
