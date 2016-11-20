@@ -12,6 +12,8 @@ Planned features:
 - [ ] Prevent users from adding duplicate champions
 - [ ] Give strengths and weaknesses their own boxes instead of mixing them together
 - [ ] When a champion is countered, stop offering counters for that champ
+- [ ] Allow users to create a roster of champions they're comfortable with
+- [ ] Allow users to select which position they've been assigned and thereby filter their roster of champions
 
 Planned optimizations:
 
