@@ -24,7 +24,7 @@
   },{
     "name": "Quinn",
     "roster_positions": ["top", "mid"],
-    "strengths": ["waveclear", "mobility", "interrupt"],
+    "strengths": ["waveclear", "mobility", "interrupt", "harass"],
     "counters": ["Katarina"]
   },{
     "name": "Ziggs",
@@ -72,5 +72,8 @@
     "name": "Soraka",
     "strengths": ["heal"],
     "counters": ["Caitlyn", "Varus"]
+  },{
+    "name": "Nasus",
+    "strengths": ["tank", "cc", "sustain", "lategame"]
   }
 ]

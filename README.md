@@ -1,4 +1,4 @@
-# Doran
+# [Doran](http://champion-select-assistant.herokuapp.com/)
 An assistant for League of Legends Champion Select.
 
 ![snapshot preview](http://champion-select-assistant.herokuapp.com/readme-snapshot.png)
@@ -17,5 +17,7 @@ Planned optimizations:
 
 - [ ] Create a view template for champion rows
 - [ ] Automatically generate the list of selectable champions from the datafile instead of needing to do it manually
+- [ ] Fix tabbing between input boxes
+- [ ] Prevent adding more than 5 champs to a team
 
 Someday it would be great to get play rates, counters, and bans from [Champion.GG](http://champion.gg) or grab them from Riot's API the way that site does. Who knows what the future holds? ¯\\\_(ツ)_/¯
