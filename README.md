@@ -1,5 +1,5 @@
 # [Doran](http://champion-select-assistant.herokuapp.com/)
-An assistant for League of Legends Champion Select.
+An assistant for League of Legends Champion Select. More details in [this Medium post](https://medium.com/@DawnPaladin/making-a-champion-select-assistant-for-league-of-legends-626d3fd07573#.duhl0vpk4).
 
 ![snapshot preview](http://champion-select-assistant.herokuapp.com/readme-snapshot.png)
 
