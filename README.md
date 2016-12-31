@@ -5,10 +5,11 @@ An assistant for League of Legends Champion Select.
 
 Keep this open during Champion Select. Add friendly and enemy champs as they're selected by each team, and it will suggest counterpicks and give you an overview of your team's strengths and weaknesses.
 
-This project is still in a very early stage; it wants a few more features, and the data it provides is very limited. If you like, you're welcome to contribute data by editing [the data file](https://github.com/DawnPaladin/Doran/blob/master/champ_data.json) and submitting a pull request. (Hopefully at some point I will learn how to set up a form to make submitting data more convenient!)
+This project is still in **alpha;** it wants a few more features, and the data it provides is very limited. If you like, you're welcome to contribute data by editing [the data file](https://github.com/DawnPaladin/Doran/blob/master/champ_data.json) and submitting a pull request.
 
 Planned features:
 
+- [ ] Create a form allowing users to submit champion data
 - [ ] Prevent users from adding duplicate champions
 - [ ] Give strengths and weaknesses their own boxes instead of mixing them together
 - [ ] When a champion is countered, stop offering counters for that champ
