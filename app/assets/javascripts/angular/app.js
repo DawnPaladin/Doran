@@ -1,4 +1,4 @@
-var Doran = angular.module('Doran', ['restangular']);
+var Doran = angular.module('Doran', ['restangular', 'ui.router']);
 
 Doran.config(
   ["$httpProvider",
@@ -19,4 +19,18 @@ Doran.config(['RestangularProvider', function(RestangularProvider) {
   RestangularProvider.setDefaultHttpFields({
       "content-type": "application/json"
   });
-}])
+}]);
+
+Doran.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/champions');
+  $stateProvider
+    .state('champions', {
+      url: '/champions',
+      templateUrl: "templates/champions/index.html",
+      controller: "ChampionCtrl"
+    });
+}]); // TODO: use `resolve` to load champion data
+
+Doran.run(['$rootScope', function($rootScope) {
+  $rootScope.$on('$stateChangeError', console.warn.bind(console));
+}]);

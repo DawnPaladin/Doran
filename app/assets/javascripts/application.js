@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require lodash.core.js
+//= require underscore.js
 //= require restangular.js
 //= require_tree .
