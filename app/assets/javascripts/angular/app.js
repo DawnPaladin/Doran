@@ -29,7 +29,7 @@ Doran.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $
       templateUrl: "templates/champions/index.html",
       controller: "ChampionCtrl"
     });
-}]); // TODO: use `resolve` to load champion data
+}]);
 
 Doran.run(['$rootScope', function($rootScope) {
   $rootScope.$on('$stateChangeError', console.warn.bind(console));

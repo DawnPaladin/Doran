@@ -1,3 +1,5 @@
 Doran.controller('ChampionCtrl', ['$scope', 'championService', function($scope, championService) {
-  $scope.champions = championService.champions;
+  championService.getAll().then(function(champions) {
+    $scope.champions = champions;
+  });
 }]);
