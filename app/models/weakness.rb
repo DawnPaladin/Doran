@@ -1,0 +1,2 @@
+class Weakness < ApplicationRecord
+end

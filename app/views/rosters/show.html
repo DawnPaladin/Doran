@@ -1,0 +1,12 @@
+<script type="text/x-template" id="champ-tile">
+  <div class="champ-tile">
+    <img :src="champ.portrait" alt="" class="champ-icon">
+    <div class="champ-name">{{ champ.name }}</div>
+  </div>
+</script>
+
+<h1>My Roster</h1>
+
+<div id="roster">
+  <div is="roster-position" v-for="position in rosterPositions" :position="position">{{ position.name }}</div>
+</div>

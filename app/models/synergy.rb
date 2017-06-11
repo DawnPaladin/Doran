@@ -1,0 +1,2 @@
+class Synergy < ApplicationRecord
+end
