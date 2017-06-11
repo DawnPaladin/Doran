@@ -1,13 +1,1 @@
-<script type="text/x-template" id="champ-tile">
-  <div class="champ-tile">
-    <img :src="champ.portrait" alt="" class="champ-icon">
-    <div class="champ-name">{{ champ.name }}</div>
-  </div>
-</script>
-
 <h1>Champions</h1>
-
-<div id="champions">
-  <input id="filter-champs" v-model="champFilterText" placeholder="Find a champion"/>
-  <div is="champ-tile" v-for="champ in filteredChamps" :champ="champ"></div>
-</div>

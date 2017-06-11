@@ -74,6 +74,8 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.8.4)
     jazz_fingers (4.0.1)
       awesome_print (~> 1.6)
@@ -103,6 +105,7 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     multi_json (1.12.1)
+    multi_xml (0.5.5)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -202,6 +205,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  httparty
   jazz_fingers
   jbuilder (~> 2.5)
   jquery-rails
