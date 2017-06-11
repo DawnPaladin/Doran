@@ -1,3 +1,20 @@
-// Place all the styles related to the champions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.champ-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.champ-card {
+  background: lightgray;
+  margin: 1em;
+  width: 25%;
+}
+
+.champ-portrait {
+  width: 50px;
+}
+
+.champ-name {
+  font-size: 1.5em;
+  display: inline;
+}
