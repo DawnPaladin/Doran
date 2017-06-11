@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :champions, only: [:index]
   resources :rosters, only: [:show]
 
-  root to: 'champions#index'
+  root 'angular#index'
+  get 'angular/index'
 
 end

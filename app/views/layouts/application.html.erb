@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Doran">
   <head>
     <title>Doran</title>
     <%= csrf_meta_tags %>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <%= yield %>
+    </div>
   </body>
 </html>
