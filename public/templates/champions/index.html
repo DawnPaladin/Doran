@@ -6,5 +6,6 @@
   <div ng-repeat="champion in champions | filter: championFilter" class="champ-card">
     <img ng-src="{{ champion.portrait }}" alt="" class="champ-portrait">
     <div class="champ-name">{{ champion.name }}</div>
+    <addable ng-repeat="strength in champion.strengths" strength="strength"></addable>
   </div>
 </div>
