@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require underscore.js
 //= require restangular.js
+//= require awesomplete
 //= require_tree .

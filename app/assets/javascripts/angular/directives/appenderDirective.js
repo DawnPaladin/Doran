@@ -4,6 +4,10 @@ Doran.directive('appender', function() {
     restrict: 'E',
     scope: {
       attrName: '@'
+    },
+    link: function(scope, element, attrs) {
+      var input = element[0].querySelector('input');
+      new Awesomplete(input, { list: '#mylist' });
     }
   };
 });
