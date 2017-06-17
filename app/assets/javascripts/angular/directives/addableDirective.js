@@ -3,7 +3,7 @@ Doran.directive('addable', function() {
     templateUrl: '/directives/addableDirective.html',
     restrict: 'E',
     scope: {
-      strength: '='
+      attr: '=',
     }
   };
 });
