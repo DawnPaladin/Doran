@@ -1,13 +1,18 @@
-Doran.directive('appender', function() {
+Doran.directive('appender', ['attrService', function(attrService) {
   return {
     templateUrl: "/directives/appenderDirective.html",
     restrict: 'E',
     scope: {
-      attrName: '@'
+      attrName: '@',
     },
     link: function(scope, element, attrs) {
       var input = element[0].querySelector('input');
-      new Awesomplete(input, { list: '#mylist' });
+      attrService.getStrengths().then(function(receivedStrengths) {
+        var strengthsList = receivedStrengths.map(function(rcStr) {
+          return rcStr.name;
+        });
+        new Awesomplete(input, { list: strengthsList });
+      });
     }
   };
-});
+}]);
