@@ -7,11 +7,8 @@ Doran.directive('appender', ['attrService', function(attrService) {
     },
     link: function(scope, element, attrs) {
       var input = element[0].querySelector('input');
-      attrService.getStrengths().then(function(receivedStrengths) {
-        var strengthsList = receivedStrengths.map(function(rcStr) {
-          return rcStr.name;
-        });
-        new Awesomplete(input, { list: strengthsList });
+      attrService.getStrengths().then((receivedStrengths) => {
+        new Awesomplete(input, { list: receivedStrengths.map((rcStr) => rcStr.name) });
       });
     }
   };
