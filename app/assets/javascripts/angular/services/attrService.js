@@ -1,19 +1,34 @@
 Doran.factory('attrService', ['Restangular', '$q', function(Restangular, $q) {
-  var exports = {};
-
-  var _strengths = [];
-  var _fetching = false;
-  exports.getStrengths = function() {
-    if (_strengths.length || _fetching) { return $q.when(_strengths); }
-    else {
-      _fetching = true;
-      return Restangular.all('strengths').getList()
-        .then(function(strengths) {
-          angular.copy(strengths, _strengths);
-          return _strengths;
+  var _attrs = {
+    strengths: [],
+    weaknesses: [],
+  };
+  var _fetching = {
+    strengths: false,
+    weaknesses: false,
+  };
+  var getAttrList = function(attrName) {
+    if (_attrs[attrName].length) {
+      return $q.when(_attrs[attrName]);
+    }
+    else if (_fetching[attrName]) {
+      return new Promise(function(resolve, reject) {
+        (function wait() {
+          if (_attrs[attrName].length) return resolve(_attrs[attrName]);
+          setTimeout(wait, 500);
+        })();
+      });
+    } else {
+      _fetching[attrName] = true;
+      return Restangular.all(attrName).getList()
+        .then(function(receivedAttrList) {
+          _attrs[attrName] = receivedAttrList;
+          return _attrs[attrName];
         });
     }
   };
 
-  return exports;
+  return {
+    getAttrList,
+  };
 }]);

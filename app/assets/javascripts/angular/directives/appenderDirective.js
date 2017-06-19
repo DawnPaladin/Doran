@@ -4,11 +4,13 @@ Doran.directive('appender', ['attrService', function(attrService) {
     restrict: 'E',
     scope: {
       attrName: '@',
+      attrPlural: '@',
     },
     link: function(scope, element, attrs) {
       var input = element[0].querySelector('input');
-      attrService.getStrengths().then((receivedStrengths) => {
-        new Awesomplete(input, { list: receivedStrengths.map((rcStr) => rcStr.name) });
+      attrService.getAttrList(attrs.attrPlural).then((receivedAttrList) => {
+        var attrList = receivedAttrList.map((rcAttr) => rcAttr.name);
+        new Awesomplete(input, { list: attrList });
       });
     }
   };
